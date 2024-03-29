@@ -1,0 +1,146 @@
+@media (max-width: 768px) {
+    .heading1.main-heading {
+      font-size: 40px;
+    }
+
+    .paragraph-main-description {
+      font-size: 12px;
+    }
+
+
+  .wifu-container {
+    width: 445px;
+  }
+
+  .wifu1-container, .wifu2-container {
+    width: 274px;
+    height: 180px;
+  }
+
+  .wifu1-img, .wifu2-img {
+    width: 180px;
+  }
+
+  .rating-section-heading {
+    font-size: 26px;
+  }
+
+  .wifu-name {
+    font-size: 17px;
+  }
+
+  .footer-links {
+    column-gap: 14px;
+  }
+
+
+  .footer-links > a {
+    font-size: 11px;
+  }
+
+  .footer-links > a > img {
+    width: 20px;
+  }
+}
+
+@media (max-width: 496px) {
+  .heading1.main-heading {
+      font-size: 30px;
+    }
+
+    .paragraph-main-description-container {
+      width: 350px;
+    }
+
+    .paragraph-main-description {
+      font-size: 10px;
+      padding: 0 30px 0 30px;
+    }
+
+
+  .wifu-container {
+    width: 345px;
+    column-gap: 10px;
+  }
+
+  .wifu1-container, .wifu2-container {
+    width: 280px;
+    height: 155px;
+  }
+
+  .wifu1-img, .wifu2-img {
+    width: 150px;
+  }
+
+  .rating-section-heading {
+    font-size: 22px;
+  }
+
+  .wifu-name {
+    font-size: 14px;
+  }
+
+  .footer-links {
+    column-gap: 14px;
+  }
+
+
+  .footer-links > a {
+    font-size: 9px;
+  }
+
+  .footer-links > a > img {
+    width: 14px;
+  }
+}
+
+@media (max-width: 354px) {
+  .heading1.main-heading {
+      font-size: 24px;
+    }
+
+    .paragraph-main-description-container {
+      width: 300px;
+    }
+
+    .paragraph-main-description {
+      font-size: 10px;
+      padding: 0 30px 0 30px;
+    }
+
+
+  .wifu-container {
+    width: 300px;
+    column-gap: 10px;
+  }
+
+  .wifu1-container, .wifu2-container {
+    width: 220px;
+    height: 135px;
+  }
+
+  .wifu1-img, .wifu2-img {
+    width: 135px;
+  }
+
+  .rating-section-heading {
+    font-size: 16px;
+  }
+
+  .wifu-name {
+    font-size: 12px;
+  }
+
+  .footer-links {
+    column-gap: 14px;
+  }
+
+
+  .footer-links > a {
+    font-size: 7px;
+  }
+
+  .footer-links > a > img {
+    width: 11px;
+  }
+}
