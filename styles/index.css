@@ -1,0 +1,102 @@
+.main-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.intro-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.heading1.main-heading {
+  font-family: raleway, sans-serif;
+  font-weight: bold;
+  color: var(--clr-pink);
+  text-align: center;
+  margin: 0 0 30px 0;
+}
+
+.paragraph-main-description-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 500px;
+}
+
+.paragraph-main-description {
+  color: var(--clr-purple);
+  font-size: 14px;
+  font-family: "Source Code Pro", monospace;
+}
+
+.rating-section {
+  margin: 50px 0 300px 0;
+}
+
+.rating-section-heading {
+  font-family: raleway, sans-serif;
+  font-size: 30px;
+  font-weight: 500;
+}
+
+.wifu-container {
+  width: 1000px;
+  height: 360px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  margin: 30px 20px 50px 20px;
+  column-gap: 80px;
+}
+
+.wifu1,
+.wifu2 {
+  height: 260px;
+  overflow: hidden;
+}
+
+.wifu-container > img {
+  width: 100%;
+  height: 100%;
+}
+
+.wifu1-container,
+.wifu2-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 320px;
+}
+
+.wifu1-img,
+.wifu2-img {
+  cursor: pointer;
+}
+
+.wifu1-img:hover,
+.wifu2-img:hover {
+  border-style: solid;
+  border-width: 2px;
+  border-radius: 2px;
+  border-color: var(--clr-peach);
+}
+
+.wifu1-img:active,
+.wifu2-img:active {
+  border-style: solid;
+  border-width: 3px;
+  border-radius: 3px;
+  border-color: var(--clr-peach);
+}
+
+.wifu-name {
+  font-family: "raleway";
+  font-size: 20px;
+  color: var(--clr-dark);
+  margin: 10px 0 0 0;
+}
