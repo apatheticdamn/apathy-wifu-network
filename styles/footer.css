@@ -1,0 +1,40 @@
+.footer-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+}
+
+
+.footer-links {
+  display: flex;
+  flex-direction: row;
+  gap: 40px;
+}
+
+.footer-links > a > img {
+  width: 23px;
+}
+
+.footer-links > a  {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 13px;
+  gap: 2px;
+  color: var(--clr-pink);
+  font-weight: lighter;
+  transition: all 0.3s;
+}
+
+.footer-links > a:hover {
+  font-weight: bold;
+}
+
+.footer-link:hover {
+  border: none;
+  border-radius: 5px;
+  border-width: 1px;
+  background-color: rgb(168, 168, 168);
+}
