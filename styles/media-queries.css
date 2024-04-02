@@ -10,6 +10,7 @@
 
   .wifu-container {
     width: 445px;
+    gap: 10px;
   }
 
   .wifu1-container, .wifu2-container {
@@ -60,7 +61,10 @@
 
   .wifu-container {
     width: 345px;
+    height: 200px;
     column-gap: 10px;
+    margin-right: 0;
+    margin-left: 0;
   }
 
   .wifu1-container, .wifu2-container {
