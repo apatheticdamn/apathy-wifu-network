@@ -4,7 +4,7 @@ Welcome to Apathy Waifu Network, a comprehensive anime waifu rating platform!
 
 ## Description
 
-ApathyWaifuNetwork is a web application where users can browse through a vast collection of anime waifus, rate them based on appearance, personality, and overall appeal. Our platform strives to be the ultimate destination for anime and manga enthusiasts seeking a comprehensive waifu rating platform.
+Apathy Waifu Network is a web application where users can rate wifus based on appearance. This platform strives to be the ultimate destination for anime and manga enthusiasts seeking a comprehensive waifu rating platform.
 
 ## Contributing
 
