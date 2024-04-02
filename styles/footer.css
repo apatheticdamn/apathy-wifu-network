@@ -23,13 +23,18 @@
   align-items: center;
   font-size: 13px;
   gap: 2px;
-  color: var(--clr-pink);
+  color: var(--clr-dark);
   font-weight: lighter;
   transition: all 0.3s;
 }
 
 .footer-links > a:hover {
-  font-weight: bold;
+  color: var(--clr-pink);
+}
+
+.footer-link {
+  padding: 3px;
+  transition: all 0.3s;
 }
 
 .footer-link:hover {
