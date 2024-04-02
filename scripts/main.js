@@ -7,12 +7,12 @@ const wifuImages = [
   'assets/images/daki.jpg',
   'assets/images/fami.jpg',
   'assets/images/fubuki.jpg',
-  'assets/images/himeno.jpg',
-  'assets/images/hina.jpg',
+  'assets/images/himeno.webp',
+  'assets/images/hina.png',
   'assets/images/kaguya_shinomiya.jpg',
   'assets/images/kobeni.jpg',
   'assets/images/komi_shouko.jpg',
-  'assets/images/kosaki_onodera.jpg',
+  'assets/images/kosaki_onodera.png',
   'assets/images/lucy.jpeg',
   'assets/images/mai_sakurajima.jpg',
   'assets/images/makima.jpg',
@@ -37,6 +37,10 @@ const wifu2Img = document.querySelector('.wifu2-img');
 wifu1Img.addEventListener('click', changeWifus);
 wifu2Img.addEventListener('click', changeWifus);
 
+function toTitleCase(str) {
+  return str.split('_').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
+}
+
 function changeWifus() {
   let randomIndex1, randomIndex2;
 
@@ -51,6 +55,12 @@ function changeWifus() {
   if (randomImage1 && randomImage2) {
     wifu1Img.src = randomImage1;
     wifu2Img.src = randomImage2;
+
+    const wifuName1 = toTitleCase(randomImage1.split('/').pop().split('.')[0]);
+    const wifuName2 = toTitleCase(randomImage2.split('/').pop().split('.')[0]);
+
+    document.querySelector('.wifu1-name').textContent = wifuName1;
+    document.querySelector('.wifu2-name').textContent = wifuName2;
   } else {
     console.error("One or both random image URLs are undefined.");
   }
