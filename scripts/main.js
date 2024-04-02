@@ -11,7 +11,7 @@ const wifuImages = [
   'assets/images/fubuki.jpg',
   'assets/images/himeno.webp',
   'assets/images/hina.png',
-  'assets/images/hinata.webp',
+  'assets/images/hinata.png',
   'assets/images/kaguya_shinomiya.jpg',
   'assets/images/kobeni.jpg',
   'assets/images/komi_shouko.jpg',
