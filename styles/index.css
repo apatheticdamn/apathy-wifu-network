@@ -76,6 +76,8 @@
 .wifu1-img,
 .wifu2-img {
   cursor: pointer;
+  opacity: 1;
+  transition: opacity 0.2s ease-in-out;
 }
 
 .wifu1-img:hover,
