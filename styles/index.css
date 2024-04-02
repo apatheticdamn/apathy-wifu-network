@@ -39,7 +39,7 @@
 
 .rating-section-heading {
   font-family: raleway, sans-serif;
-  font-size: 30px;
+  font-size: 26px;
   font-weight: 500;
 }
 
@@ -50,7 +50,7 @@
   justify-content: center;
   align-items: flex-start;
   margin: 30px 20px 50px 20px;
-  column-gap: 80px;
+  column-gap: 60px;
 }
 
 .wifu1,
