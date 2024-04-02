@@ -34,9 +34,6 @@ const wifuImages = [
 const wifu1Img = document.querySelector('.wifu1-img');
 const wifu2Img = document.querySelector('.wifu2-img');
 
-wifu1Img.addEventListener('click', changeWifus);
-wifu2Img.addEventListener('click', changeWifus);
-
 function toTitleCase(str) {
   return str.split('_').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
 }
@@ -53,15 +50,28 @@ function changeWifus() {
   const randomImage2 = wifuImages[randomIndex2];
 
   if (randomImage1 && randomImage2) {
-    wifu1Img.src = randomImage1;
-    wifu2Img.src = randomImage2;
+    wifu1Img.style.opacity = 0;
+    wifu2Img.style.opacity = 0;
 
-    const wifuName1 = toTitleCase(randomImage1.split('/').pop().split('.')[0]);
-    const wifuName2 = toTitleCase(randomImage2.split('/').pop().split('.')[0]);
+    setTimeout(() => {
+      wifu1Img.src = randomImage1;
+      wifu2Img.src = randomImage2;
 
-    document.querySelector('.wifu1-name').textContent = wifuName1;
-    document.querySelector('.wifu2-name').textContent = wifuName2;
+      const wifuName1 = toTitleCase(randomImage1.split('/').pop().split('.')[0]);
+      const wifuName2 = toTitleCase(randomImage2.split('/').pop().split('.')[0]);
+
+      document.querySelector('.wifu1-name').textContent = wifuName1;
+      document.querySelector('.wifu2-name').textContent = wifuName2;
+
+      setTimeout(() => {
+        wifu1Img.style.opacity = 1;
+        wifu2Img.style.opacity = 1;
+      }, 50);
+    }, 500); 
   } else {
     console.error("One or both random image URLs are undefined.");
   }
 }
+
+wifu1Img.addEventListener('click', changeWifus);
+wifu2Img.addEventListener('click', changeWifus);
