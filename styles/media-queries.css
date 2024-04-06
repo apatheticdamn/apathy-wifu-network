@@ -115,7 +115,7 @@
   }
 
   .footer-links {
-    column-gap: 14px;
+    column-gap: 10px;
   }
 
 
@@ -124,7 +124,7 @@
   }
 
   .footer-links > a > img {
-    width: 14px;
+    width: 15px;
   }
 }
 
