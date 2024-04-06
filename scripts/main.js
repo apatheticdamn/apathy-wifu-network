@@ -53,7 +53,6 @@ const wifuImages = [
 const wifu1Img = document.querySelector('.wifu1-img');
 const wifu2Img = document.querySelector('.wifu2-img');
 
-
 function toTitleCase(str) {
   return str.split('_').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
 }
@@ -75,22 +74,31 @@ function changeWifus() {
   const wifu1Img = document.querySelector('.wifu1-img');
   const wifu2Img = document.querySelector('.wifu2-img');
 
-  wifu1Img.src = randomImage1;
-  wifu2Img.src = randomImage2;
-
-  document.querySelector('.wifu1-name').textContent = wifuName1;
-  document.querySelector('.wifu2-name').textContent = wifuName2;
-
   wifu1Img.removeEventListener('click', handleClick);
   wifu2Img.removeEventListener('click', handleClick);
 
-  wifu1Img.addEventListener('click', handleClick);
-  wifu2Img.addEventListener('click', handleClick);
+  wifu1Img.style.opacity = 0;
+  wifu2Img.style.opacity = 0;
+
+  setTimeout(() => {
+    wifu1Img.src = randomImage1;
+    wifu2Img.src = randomImage2;
+
+    document.querySelector('.wifu1-name').textContent = wifuName1;
+    document.querySelector('.wifu2-name').textContent = wifuName2;
+
+    setTimeout(() => {
+      wifu1Img.style.opacity = 1;
+      wifu2Img.style.opacity = 1;
+    }, 200);
+
+    wifu1Img.addEventListener('click', handleClick);
+    wifu2Img.addEventListener('click', handleClick);
+  }, 50);
 
   function handleClick() {
     const wifuName = this === wifu1Img ? wifuName1 : wifuName2;
     wifuNameAssigner(toTitleCase(wifuName));
-    
     wifu1Img.removeEventListener('click', handleClick);
     wifu2Img.removeEventListener('click', handleClick);
     changeWifus();
