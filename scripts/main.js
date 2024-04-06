@@ -4,7 +4,7 @@ const wifuImages = [
   'assets/images/ai_hoshino.jpg',
   'assets/images/akeno_himejima.jpg',
   'assets/images/annie.jpg',
-  'assets/images/anya_forger.jpg',
+  'assets/images/anya_forger (FBI Open Up).jpg',
   'assets/images/asuna_yuuki.jpg',
   'assets/images/chika_fujiwara.jpeg',
   'assets/images/chizuru.jpg',
@@ -31,7 +31,7 @@ const wifuImages = [
   'assets/images/mikoto_mikasa.jpg',
   'assets/images/miku_nakano.jpg',
   'assets/images/miyako_saito.jpg',
-  'assets/images/nezuko.jpg',
+  'assets/images/nezuko (Go to Jail).jpg',
   'assets/images/nico_robin.jpg',
   'assets/images/nino_nakano.webp',
   'assets/images/nobara_kugisaki.png',
@@ -47,11 +47,12 @@ const wifuImages = [
   'assets/images/yukino.webp',
   'assets/images/yumeko_jabami.jpg',
   'assets/images/zero_two.webp',
-  'assets/images/zoro.png',
+  'assets/images/zoro (Lost again lmao).png',
 ];
 
 const wifu1Img = document.querySelector('.wifu1-img');
 const wifu2Img = document.querySelector('.wifu2-img');
+
 
 function toTitleCase(str) {
   return str.split('_').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
@@ -68,29 +69,40 @@ function changeWifus() {
   const randomImage1 = wifuImages[randomIndex1];
   const randomImage2 = wifuImages[randomIndex2];
 
-  if (randomImage1 && randomImage2) {
-    wifu1Img.style.opacity = 0;
-    wifu2Img.style.opacity = 0;
+  const wifuName1 = toTitleCase(randomImage1.split('/').pop().split('.')[0]);
+  const wifuName2 = toTitleCase(randomImage2.split('/').pop().split('.')[0]);
 
-    setTimeout(() => {
-      wifu1Img.src = randomImage1;
-      wifu2Img.src = randomImage2;
+  const wifu1Img = document.querySelector('.wifu1-img');
+  const wifu2Img = document.querySelector('.wifu2-img');
 
-      const wifuName1 = toTitleCase(randomImage1.split('/').pop().split('.')[0]);
-      const wifuName2 = toTitleCase(randomImage2.split('/').pop().split('.')[0]);
+  wifu1Img.src = randomImage1;
+  wifu2Img.src = randomImage2;
 
-      document.querySelector('.wifu1-name').textContent = wifuName1;
-      document.querySelector('.wifu2-name').textContent = wifuName2;
+  document.querySelector('.wifu1-name').textContent = wifuName1;
+  document.querySelector('.wifu2-name').textContent = wifuName2;
 
-      setTimeout(() => {
-        wifu1Img.style.opacity = 1;
-        wifu2Img.style.opacity = 1;
-      }, 50);
-    }, 500); 
-  } else {
-    console.error("One or both random image URLs are undefined.");
+  wifu1Img.removeEventListener('click', handleClick);
+  wifu2Img.removeEventListener('click', handleClick);
+
+  wifu1Img.addEventListener('click', handleClick);
+  wifu2Img.addEventListener('click', handleClick);
+
+  function handleClick() {
+    const wifuName = this === wifu1Img ? wifuName1 : wifuName2;
+    wifuNameAssigner(toTitleCase(wifuName));
+    
+    wifu1Img.removeEventListener('click', handleClick);
+    wifu2Img.removeEventListener('click', handleClick);
+    changeWifus();
   }
 }
 
-wifu1Img.addEventListener('click', changeWifus);
-wifu2Img.addEventListener('click', changeWifus);
+function wifuNameAssigner(name) {
+  const wifuLabel = document.querySelector('.wifu-list-names');
+  if (wifuLabel.textContent !== '') {
+    wifuLabel.innerHTML += '<br>';
+  }
+  wifuLabel.innerHTML += name;
+}
+
+changeWifus();
