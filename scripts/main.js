@@ -26,7 +26,7 @@ const wifuImages = [
   'assets/images/mai_sakurajima.jpg',
   'assets/images/makima.jpg',
   'assets/images/marin_kitagawa.png',
-  'assets/images/magumin.png',
+  'assets/images/megumin.png',
   'assets/images/mikasa.jpg',
   'assets/images/mikoto_mikasa.webp',
   'assets/images/miku_nakano.jpg',
