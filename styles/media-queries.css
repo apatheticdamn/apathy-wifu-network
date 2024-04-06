@@ -10,7 +10,9 @@
 
   .wifu-container {
     width: 445px;
+    height: 200px;
     gap: 10px;
+    margin-bottom: 0;
   }
 
   .wifu1-container, .wifu2-container {
@@ -22,14 +24,26 @@
     width: 180px;
   }
 
+  .rating-section {
+    height: 300px;
+  }
+
   .rating-section-heading {
     font-size: 26px;
   }
-
+  
   .wifu-name {
     font-size: 17px;
   }
+  
+  .wifu-list-section-heading {
+    font-size: 26px;   
+   }
 
+   .wifu-list-names {
+    font-size: 14px;
+   }
+  
   .footer-links {
     column-gap: 14px;
   }
@@ -76,6 +90,22 @@
     width: 150px;
   }
 
+  .rating-section {
+    height: 260px;
+  }
+
+.wifu-list-section-heading {
+    font-size: 22px;   
+   }
+
+   .wifu-list-names {
+    font-size: 12px;
+   }
+  
+  .footer-links {
+    column-gap: 14px;
+  }
+
   .rating-section-heading {
     font-size: 22px;
   }
@@ -115,6 +145,7 @@
 
   .wifu-container {
     width: 300px;
+    height: 150px;
     column-gap: 10px;
   }
 
@@ -126,6 +157,18 @@
   .wifu1-img, .wifu2-img {
     width: 135px;
   }
+
+  .rating-section {
+    height: 200px;
+  }
+
+.wifu-list-section-heading {
+    font-size: 16px;   
+   }
+
+   .wifu-list-names {
+    font-size: 10px;
+   }
 
   .rating-section-heading {
     font-size: 16px;
@@ -146,5 +189,29 @@
 
   .footer-links > a > img {
     width: 11px;
+  }
+}
+
+@media (max-width: 300px) {
+  .intro-section {
+    width: 200px;
+  }
+  .paragraph-main-description-container {
+    width: 180px;
+  }
+  .wifu1-container, .wifu2-container {
+    width: 160px;
+  }
+
+
+  .wifu-container {
+    display: flex;
+    flex-wrap: wrap;
+    width: 200px;
+    height: 300px;
+
+  }
+  .wifu-list-section {
+    margin-top: 180px;
   }
 }
