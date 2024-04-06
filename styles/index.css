@@ -34,7 +34,8 @@
 }
 
 .rating-section {
-  margin: 50px 0 300px 0;
+  margin: 50px 0 0px 0;
+  height: 400px;
 }
 
 .rating-section-heading {
@@ -101,4 +102,22 @@
   font-size: 20px;
   color: var(--clr-dark);
   margin: 10px 0 0 0;
+}
+
+.wifu-list-section {
+  margin: 10px 10px 100px 10px;
+}
+
+.wifu-list-section-heading {
+  color: var(--clr-pink);
+  font-family: 'General Sans', sans-serif;
+  font-size: 28px;
+  font-weight: 600;
+}
+
+.wifu-list-names {
+  color: var(--clr-dark);
+  font-family: 'General Sans', sans-serif;
+  font-size: 19px;
+  font-weight: lighter;
 }
