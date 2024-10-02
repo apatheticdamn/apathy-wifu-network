@@ -50,67 +50,55 @@ const wifuImages = [
   'assets/images/zoro (Lost again lmao).png',
 ];
 
-const wifu1Img = document.querySelector('.wifu1-img');
-const wifu2Img = document.querySelector('.wifu2-img');
+let higherCategory = [...wifuImages];
+let matchCounter = 1;
 
 function toTitleCase(str) {
   return str.split('_').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
 }
 
 function changeWifus() {
+  if (higherCategory.length === 1) {
+    const trueWifu = toTitleCase(higherCategory[0].split('/').pop().split('.')[0]);
+    document.body.innerHTML = '';
+    const trueWifuImage = document.createElement('img');
+    trueWifuImage.src = higherCategory[0];
+    trueWifuImage.alt = trueWifu;
+    trueWifuImage.className = 'true-wifu-img';
+    trueWifuImage.style.width = '300px';
+    trueWifuImage.style.height = 'auto';
+    document.body.appendChild(trueWifuImage);
+    const trueWifuMessage = document.createElement('h2');
+    trueWifuMessage.textContent = `${trueWifu} is your true waifu!`;
+    document.body.appendChild(trueWifuMessage);
+    return;
+  }
+
   let randomIndex1, randomIndex2;
 
   do {
-    randomIndex1 = Math.floor(Math.random() * wifuImages.length);
-    randomIndex2 = Math.floor(Math.random() * wifuImages.length);
+    randomIndex1 = Math.floor(Math.random() * higherCategory.length);
+    randomIndex2 = Math.floor(Math.random() * higherCategory.length);
   } while (randomIndex1 === randomIndex2);
 
-  const randomImage1 = wifuImages[randomIndex1];
-  const randomImage2 = wifuImages[randomIndex2];
+  const randomImage1 = higherCategory[randomIndex1];
+  const randomImage2 = higherCategory[randomIndex2];
 
   const wifuName1 = toTitleCase(randomImage1.split('/').pop().split('.')[0]);
   const wifuName2 = toTitleCase(randomImage2.split('/').pop().split('.')[0]);
 
-  const wifu1Img = document.querySelector('.wifu1-img');
-  const wifu2Img = document.querySelector('.wifu2-img');
+  document.querySelector('.wifu1-img').src = randomImage1;
+  document.querySelector('.wifu2-img').src = randomImage2;
+  document.querySelector('.wifu1-name').textContent = wifuName1;
+  document.querySelector('.wifu2-name').textContent = wifuName2;
 
-  wifu1Img.removeEventListener('click', handleClick);
-  wifu2Img.removeEventListener('click', handleClick);
-
-  wifu1Img.style.opacity = 0;
-  wifu2Img.style.opacity = 0;
-
-  setTimeout(() => {
-    wifu1Img.src = randomImage1;
-    wifu2Img.src = randomImage2;
-
-    document.querySelector('.wifu1-name').textContent = wifuName1;
-    document.querySelector('.wifu2-name').textContent = wifuName2;
-
-    setTimeout(() => {
-      wifu1Img.style.opacity = 1;
-      wifu2Img.style.opacity = 1;
-    }, 200);
-
-    wifu1Img.addEventListener('click', handleClick);
-    wifu2Img.addEventListener('click', handleClick);
-  }, 50);
-
-  function handleClick() {
-    const wifuName = this === wifu1Img ? wifuName1 : wifuName2;
-    wifuNameAssigner(toTitleCase(wifuName));
-    wifu1Img.removeEventListener('click', handleClick);
-    wifu2Img.removeEventListener('click', handleClick);
-    changeWifus();
-  }
+  document.querySelector('.wifu1-img').onclick = () => handleClick(wifuName1, randomImage1, randomImage2);
+  document.querySelector('.wifu2-img').onclick = () => handleClick(wifuName2, randomImage2, randomImage1);
 }
 
-function wifuNameAssigner(name) {
-  const wifuLabel = document.querySelector('.wifu-list-names');
-  if (wifuLabel.textContent !== '') {
-    wifuLabel.innerHTML += '<br>';
-  }
-  wifuLabel.innerHTML += name;
+function handleClick(winnerName, winnerImage, loserImage) {
+  higherCategory = higherCategory.filter(img => img !== loserImage);
+  changeWifus();
 }
 
 changeWifus();
